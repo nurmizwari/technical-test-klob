@@ -20,7 +20,7 @@ const AddLowongan = (props) => {
   const add = (e) => {
     e.preventDefault();
     console.log(formAdd);
-    dispatch(addedItems(formAdd));
+    dispatch(addedItems([formAdd]));
   };
   return (
     <Modal show={show} onHide={handleClose}>
@@ -31,9 +31,7 @@ const AddLowongan = (props) => {
         {" "}
         <form onSubmit={add}>
           <div class="mb-3">
-            <label>
-              Logo Perusahaan <span class="text-danger fw-bold">*</span>
-            </label>
+            <label>Logo Perusahaan</label>
             <input
               onChange={(e) => {
                 setFormAdd({
@@ -42,14 +40,17 @@ const AddLowongan = (props) => {
                 });
               }}
               type="text"
-              class="form-control"
-              // required
+              class={`form-control ${
+                !formAdd.corporateLogo.length ? "is-invalid" : "is-valid"
+              }`}
+              required
+              placeholder="Ketikan Logo Perusahaan"
             />
+            <span>Dalam bentuk link url</span>
+            <div className="valid-feedback">Looks good!</div>
           </div>
           <div class="mb-3">
-            <label>
-              Nama Perusahaan <span class="text-danger fw-bold">*</span>
-            </label>
+            <label>Nama Perusahaan</label>
             <input
               onChange={(e) => {
                 setFormAdd({
@@ -58,14 +59,16 @@ const AddLowongan = (props) => {
                 });
               }}
               type="text"
-              class="form-control"
+              class={`form-control ${
+                !formAdd.corporateName.length ? "is-invalid" : "is-valid"
+              }`}
               required
+              placeholder="Ketikan Nama Perusahaan"
             />
+            <div className="valid-feedback">Looks good!</div>
           </div>
           <div class="mb-3">
-            <label>
-              Nama Lowongan <span class="text-danger fw-bold">*</span>
-            </label>
+            <label>Nama Lowongan</label>
             <input
               onChange={(e) => {
                 setFormAdd({
@@ -74,14 +77,16 @@ const AddLowongan = (props) => {
                 });
               }}
               type="text"
-              class="form-control"
+              class={`form-control ${
+                !formAdd.positionName.length ? "is-invalid" : "is-valid"
+              }`}
               required
+              placeholder="Ketikan Nama Lowongan Perusahaan"
             />
+            <div className="valid-feedback">Looks good!</div>
           </div>
           <div class="mb-3">
-            <label>
-              Status Karyawan <span class="text-danger fw-bold">*</span>
-            </label>
+            <label>Status Karyawan</label>
             <input
               onChange={(e) => {
                 setFormAdd({
@@ -90,18 +95,19 @@ const AddLowongan = (props) => {
                 });
               }}
               type="text"
-              class="form-control"
+              class={`form-control ${
+                !formAdd.status.length ? "is-invalid" : "is-valid"
+              }`}
               required
+              placeholder="Ketikan Status Karyawan Perusahaan"
             />
+            <div className="valid-feedback">Looks good!</div>
           </div>
 
           <div class="mb-3">
             <div className="row">
               <div className="col">
-                <label>
-                  Kisaran Gaji Karyawan
-                  <span class="text-danger fw-bold">*</span>
-                </label>
+                <label>Kisaran Gaji Karyawan</label>
                 <input
                   onChange={(e) => {
                     setFormAdd({
@@ -110,15 +116,17 @@ const AddLowongan = (props) => {
                     });
                   }}
                   type="number"
-                  class="form-control"
-                  // required
+                  class={`form-control ${
+                    !formAdd.salaryFrom.length ? "is-invalid" : "is-valid"
+                  }`}
+                  required
+                  placeholder="5.000.000"
                 />
+                <div className="valid-feedback">Looks good!</div>
               </div>
 
               <div className="col">
-                <label>
-                  <span class="text-danger fw-bold">*</span>
-                </label>
+                <label></label>
                 <input
                   onChange={(e) => {
                     setFormAdd({
@@ -127,17 +135,18 @@ const AddLowongan = (props) => {
                     });
                   }}
                   type="number"
-                  class="form-control"
-                  // required
+                  class={`form-control ${
+                    !formAdd.salaryTo.length ? "is-invalid" : "is-valid"
+                  }`}
+                  required
+                  placeholder="10.000.000"
                 />
+                <div className="valid-feedback">Looks good!</div>
               </div>
             </div>
           </div>
           <div class="mb-3">
-            <label>
-              Tanggal Posting
-              <span class="text-danger fw-bold">*</span>
-            </label>
+            <label>Tanggal Posting</label>
             <input
               onChange={(e) => {
                 setFormAdd({
@@ -146,9 +155,13 @@ const AddLowongan = (props) => {
                 });
               }}
               type="date"
-              class="form-control"
-              // required
+              class={`form-control ${
+                !formAdd.postedDate.length ? "is-invalid" : "is-valid"
+              }`}
+              required
             />
+
+            <div className="valid-feedback">Looks good!</div>
           </div>
 
           <Button className="me-3" variant="secondary" onClick={handleClose}>

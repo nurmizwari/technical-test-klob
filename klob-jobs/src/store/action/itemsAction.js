@@ -10,6 +10,18 @@ export const addingItem = (payload) => {
     payload,
   };
 };
+export const applyJobb = (payload) => {
+  return {
+    type: "applyJob",
+    payload,
+  };
+};
+export const deleteJob = (payload) => {
+  return {
+    type: "deleteJob",
+    payload,
+  };
+};
 
 export const FetchingItems = () => {
   return (dispatch) => {
@@ -56,5 +68,18 @@ export const addedItems = (formAdd) => {
     console.log(formAdd, "add");
     dispatch(addingItem(formAdd));
     // data baru tidak dimasukan ke server heroku
+  };
+};
+
+export const applyingJob = (payload) => {
+  console.log(payload, "<< payload dari action");
+  return (dispatch) => {
+    dispatch(applyJobb(payload));
+  };
+};
+export const deletingJob = (payload) => {
+  console.log(payload, "<< payload dari action");
+  return (dispatch) => {
+    dispatch(deleteJob(payload));
   };
 };
