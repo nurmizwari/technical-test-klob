@@ -9,9 +9,9 @@ function itemsReducer(state = initialState, action) {
     case "fetchItem":
       return { ...state, items: action.payload };
     case "addItem":
-      return { ...state, itemsBaru: action.payload };
+      return { ...state, itemsBaru: [...state.itemsBaru, action.payload] };
     case "applyJob":
-      return { ...state, apllyJob: action.payload };
+      return { ...state, apllyJob: [...state.apllyJob, action.payload] };
     case "deleteJob":
       const newJob = state.apllyJob.filter(
         (job) => job.jobVacancyCode !== action.payload.jobVacancyCode
