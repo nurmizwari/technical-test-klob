@@ -1,6 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addedItems } from "../store/action/itemsAction";
 
 const AddLowongan = (props) => {
   const { show, handleClose } = props;
@@ -13,11 +15,12 @@ const AddLowongan = (props) => {
     salaryTo: 0,
     postedDate: "",
   });
+  const dispatch = useDispatch();
 
   const add = (e) => {
     e.preventDefault();
     console.log(formAdd);
-    dispatch(addItemsData(formAdd));
+    dispatch(addedItems(formAdd));
   };
   return (
     <Modal show={show} onHide={handleClose}>
@@ -106,7 +109,7 @@ const AddLowongan = (props) => {
                       salaryFrom: e.target.value,
                     });
                   }}
-                  type="text"
+                  type="number"
                   class="form-control"
                   // required
                 />
@@ -120,10 +123,10 @@ const AddLowongan = (props) => {
                   onChange={(e) => {
                     setFormAdd({
                       ...formAdd,
-                      salaryFrom: e.target.value,
+                      salaryTo: e.target.value,
                     });
                   }}
-                  type="text"
+                  type="number"
                   class="form-control"
                   // required
                 />
@@ -142,7 +145,7 @@ const AddLowongan = (props) => {
                   postedDate: e.target.value,
                 });
               }}
-              type="text"
+              type="date"
               class="form-control"
               // required
             />

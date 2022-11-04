@@ -1,9 +1,15 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const List = ({ item }) => {
+  const navigate = useNavigate();
+
+  const details = () => {
+    navigate(`/detail-lowongan-pekerjaan/${item.jobVacancyCode}`);
+  };
+
   return (
     <div class="col-12 col-md-3 mt-3 mb-3">
-      <div class="card bungkusCard">
+      <div onClick={details} class="card bungkusCard">
         <img
           class=" card1 card-img-top"
           src={item.corporateLogo}

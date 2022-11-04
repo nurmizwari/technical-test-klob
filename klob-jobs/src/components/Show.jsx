@@ -11,6 +11,10 @@ const Show = () => {
   });
   const dispatch = useDispatch();
 
+  const itemsBaru = useSelector((state) => {
+    return state.itemsBaru;
+  });
+  console.log(itemsBaru, "<< data baru");
   useEffect(() => {
     dispatch(FetchingItems());
   }, []);

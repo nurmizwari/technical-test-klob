@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Detail from "../components/Detail";
 import Navbar from "../components/Navbar";
 import PageLayout from "../components/PageLayout";
 import Show from "../components/Show";
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Show />,
+      },
+      {
+        path: "/detail-lowongan-pekerjaan/:jobVacancyCode",
+        element: <Detail />,
       },
     ],
   },

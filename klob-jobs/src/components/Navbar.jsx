@@ -1,5 +1,7 @@
 import { useState } from "react";
 import AddLowongan from "./AddLowongan";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
 
@@ -10,7 +12,9 @@ const Navbar = () => {
     <div>
       <nav class="navbar bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand">Klob</a>
+          <Link to={"/"} class="navbar-brand">
+            Klob
+          </Link>
           <p onClick={handleShow}>Buat Lowongan</p>
         </div>
       </nav>
