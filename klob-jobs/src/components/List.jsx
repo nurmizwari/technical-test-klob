@@ -9,9 +9,9 @@ const List = ({ item }) => {
 
   return (
     <div class="col-12 col-md-3 mt-3 mb-3">
-      <div onClick={details} class="card bungkusCard">
+      <div onClick={details} class="card">
         <img
-          class=" card1 card-img-top"
+          class=" card1 card-img-top mx-auto "
           src={item.corporateLogo}
           style={{ width: 100 }}
         />
@@ -24,10 +24,12 @@ const List = ({ item }) => {
           </h5>
           <h5 class="card-text"> {item.postedDate}</h5>
 
-          <div class="col mt-2">
-            <button type="submit" class="btn btn-success">
-              Kirim Lamaran
-            </button>
+          <div className="row">
+            <div class="col-12 mt-2">
+              <button type="submit" class="btn col-12 btn-success">
+                Kirim Lamaran
+              </button>
+            </div>
           </div>
         </div>
       </div>

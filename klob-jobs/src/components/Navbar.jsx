@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div>
       <nav class="navbar bg-light">
-        <div class="container-fluid">
+        <div class="container">
           <Link to={"/"} class="navbar-brand">
             Klob
           </Link>

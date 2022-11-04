@@ -52,7 +52,10 @@ const Detail = () => {
               .toLocaleString("id-ID", { style: "currency", currency: "IDR" })
               .slice(0, -3)}
           </p>
-          <div class="row"></div>
+          <p class="card-text">{detailJob.postedDate} </p>
+          <div className="col-12">
+            <button className={"btn col-12 btn-success"}>KIRIM LAMARAN</button>
+          </div>
         </div>
       </div>
     </div>
