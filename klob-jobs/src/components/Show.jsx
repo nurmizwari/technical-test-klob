@@ -3,6 +3,7 @@ import List from "./List";
 import { useSelector, useDispatch } from "react-redux";
 import { FetchingItems } from "../store/action/itemsAction";
 import { useEffect } from "react";
+import AddLowongan from "./AddLowongan";
 
 const Show = () => {
   const items = useSelector((state) => {
