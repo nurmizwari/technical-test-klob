@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { applyingJob } from "../store/action/itemsAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,14 +19,12 @@ const List = ({ item }) => {
   };
 
   const apllyJob = useSelector((state) => state.apllyJob);
-  console.log(apllyJob, "<<< apply job");
 
   const checkingApp = () => {
     const check = apllyJob.filter(
       (job) => job.jobVacancyCode === item.jobVacancyCode
     );
     if (check[0]) {
-      console.log(check[0], "ini data <<<<<<");
       setApplied(true);
     }
   };

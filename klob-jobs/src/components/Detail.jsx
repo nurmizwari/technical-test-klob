@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Detail = () => {
   const params = useParams();
-  const dispatch = useDispatch();
   const [detailJob, setDetailJob] = useState({
     jobVacancyCode: "",
     corporateLogo: "",
@@ -24,7 +23,6 @@ const Detail = () => {
     );
     setDetailJob(detail[0]);
   }, []);
-  console.log(detailJob, "<<< details job");
 
   const time = (inputDate) => {
     let date = new Date(inputDate);

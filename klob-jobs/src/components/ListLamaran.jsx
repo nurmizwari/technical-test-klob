@@ -1,21 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { FetchingItems } from "../store/action/itemsAction";
 import { useEffect } from "react";
 import { deletingJob } from "../store/action/itemsAction";
 import Swal from "sweetalert2";
 
 const ListLamaran = ({ job }) => {
-  const navigate = useNavigate();
-  console.log(job, "<<< jobbb");
   useEffect(() => {
     dispatch(FetchingItems());
   }, []);
   const dispatch = useDispatch();
-
-  const [loading, setLoading] = useState(false);
 
   const deleteApply = () => {
     dispatch(deletingJob(job));
@@ -27,10 +20,6 @@ const ListLamaran = ({ job }) => {
       timer: 1500,
     });
   };
-
-  if (!job) {
-    return <h2>Loading ..</h2>;
-  }
 
   return (
     <div class="col-12 col-md-3 mt-3 mb-3">

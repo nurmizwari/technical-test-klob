@@ -14,7 +14,7 @@ const Show = () => {
   const itemsBaru = useSelector((state) => {
     return state.itemsBaru;
   });
-  console.log(itemsBaru, "<< data baru");
+
   useEffect(() => {
     setLoading(true);
     dispatch(FetchingItems())

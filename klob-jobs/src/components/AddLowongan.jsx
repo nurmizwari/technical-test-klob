@@ -3,8 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addedItems } from "../store/action/itemsAction";
-import { Swal } from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddLowongan = (props) => {
   const { show, handleClose } = props;
@@ -17,21 +16,21 @@ const AddLowongan = (props) => {
     salaryTo: 0,
     postedDate: "",
   });
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const add = (e) => {
     e.preventDefault();
-    console.log(formAdd);
     dispatch(addedItems(formAdd));
-    navigate("/");
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Success Add Job",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+    setTimeout(() => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Success Add Job",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }, 1000);
   };
   return (
     <Modal show={show} onHide={handleClose}>
