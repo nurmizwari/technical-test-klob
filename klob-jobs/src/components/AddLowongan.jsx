@@ -136,7 +136,7 @@ const AddLowongan = (props) => {
               </div>
 
               <div className="col">
-                <label></label>
+                <label>- sampai</label>
                 <input
                   onChange={(e) => {
                     setFormAdd({

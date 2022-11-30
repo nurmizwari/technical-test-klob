@@ -23,7 +23,7 @@ const ListLamaran = ({ job }) => {
 
   return (
     <div class="col-12 col-md-3 mt-3 mb-3">
-      <div class="card h-100">
+      <div class="card cardd h-100">
         <img
           class=" card1 card-img-top mx-auto "
           src={job.corporateLogo}
